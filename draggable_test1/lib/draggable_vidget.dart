@@ -35,7 +35,7 @@ class _DraggableWidgetState extends State<DraggableWidget> {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         Draggable<int>(
-          feedbackOffset: const Offset(100, 100),
+          // feedbackOffset: const Offset(100, 100),
           // Data is the value this Draggable stores.
           data: widget.idWidget,
           //   axis: Axis.horizontal,
