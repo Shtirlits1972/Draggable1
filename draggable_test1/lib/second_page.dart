@@ -1,4 +1,4 @@
-import 'package:draggable_test1/statful_vidget.dart';
+import 'package:draggable_test1/draggable_vidget.dart';
 import 'package:flutter/material.dart';
 
 class SecondPage extends StatefulWidget {
@@ -20,12 +20,12 @@ class _SecondPageState extends State<SecondPage> {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            MyStatefulWidget(
+            DraggableWidget(
               dragText: '1',
               targetText: 'ONE',
               idWidget: 1,
             ),
-            MyStatefulWidget(
+            DraggableWidget(
               dragText: '2',
               targetText: 'TWO',
               idWidget: 2,

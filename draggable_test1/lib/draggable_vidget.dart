@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MyStatefulWidget extends StatefulWidget {
-  MyStatefulWidget(
+class DraggableWidget extends StatefulWidget {
+  DraggableWidget(
       {super.key,
       required this.dragText,
       required this.targetText,
@@ -11,10 +11,10 @@ class MyStatefulWidget extends StatefulWidget {
   String targetText = '';
 
   @override
-  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+  State<DraggableWidget> createState() => _DraggableWidgetState();
 }
 
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+class _DraggableWidgetState extends State<DraggableWidget> {
   Color dragColor = Colors.blueAccent;
   Color targetColor = Colors.yellowAccent;
 
@@ -35,6 +35,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         Draggable<int>(
+          feedbackOffset: const Offset(100, 100),
           // Data is the value this Draggable stores.
           data: widget.idWidget,
           //   axis: Axis.horizontal,
