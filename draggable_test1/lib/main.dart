@@ -23,10 +23,12 @@ class MyApp extends StatelessWidget {
                 MyStatefulWidget(
                   dragText: '1',
                   targetText: 'ONE',
+                  idWidget: 1,
                 ),
                 MyStatefulWidget(
                   dragText: '2',
                   targetText: 'TWO',
+                  idWidget: 2,
                 ),
               ])),
     );

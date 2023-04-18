@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 
 class MyStatefulWidget extends StatefulWidget {
   MyStatefulWidget(
-      {super.key, required this.dragText, required this.targetText});
+      {super.key,
+      required this.dragText,
+      required this.targetText,
+      required this.idWidget});
   int idWidget = 0;
   String dragText = '';
   String targetText = '';
@@ -33,7 +36,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       children: <Widget>[
         Draggable<int>(
           // Data is the value this Draggable stores.
-          data: 1,
+          data: widget.idWidget,
           //   axis: Axis.horizontal,
           feedback: Container(
             height: 100.0,
@@ -80,6 +83,15 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 ),
               ),
             );
+          },
+          onWillAccept: (data) {
+            print('onWillAccept');
+            print('data: $data, widget.idWidget: {widget.idWidget}');
+            if (data == widget.idWidget) {
+              return true;
+            } else {
+              return false;
+            }
           },
           onAccept: (int data) {
             print(widget.dragText);
